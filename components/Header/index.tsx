@@ -3,26 +3,12 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <header className='bg-neutral-900'>
+    <header className='bg-title'>
       <div className='transition-all delay-75 ease-in-out container mx-auto flex justify-center items-center md:justify-between text-white'>
-        <span className='text-xl py-3'>❤️‍🔥 CryptoFire</span>
-        <nav className='hidden md:flex gap-4'>
-          <Link href={`/exchanges`}>
-            Exchanges
-          </Link>
-          <Link href={`/markets`}>
-            Mercados
-          </Link>
-        </nav>
+        <Link href='/'>
+          <span className='text-xl text-main py-3 font-nunito cursor-pointer'>❤️‍🔥 CryptoFire</span>
+        </Link>
       </div>
-      <nav className='md:hidden flex justify-center gap-4 text-white bg-neutral-800 py-2'>
-          <Link href={`/exchanges`}>
-            Exchanges
-          </Link>
-          <Link href={`/markets`}>
-            Mercados
-          </Link>
-        </nav>
     </header>
   )
 }

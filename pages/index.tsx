@@ -14,7 +14,7 @@ const Home: NextPage<HomeProps> = (props) => {
   if(isLoading) return <TailSpin ariaLabel="loading-indicator" color='#fff' />;
 
   return (
-    <section className='bg-neutral-700 min-h-screen w-full'>
+    <section className='bg-background min-h-screen w-full'>
       <div className='mx-auto container'>
         <GlobalStats stats={data?.data?.stats}/>
         <Cryptocurrencies coinsList={data?.data?.coins} />

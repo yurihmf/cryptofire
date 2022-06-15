@@ -7,10 +7,9 @@ import { LayoutProps } from '../../interfaces/Layout'
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Head>
-        <title>CryptoFire</title>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      </Head>
+    <Head>
+      <title>CryptoFire</title>
+    </Head>
       <Header/>
       <main>
           {children}
