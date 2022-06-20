@@ -33,7 +33,7 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ coinsList}) => {
                                     <span className='text-text'>{coin.symbol}</span>
                                 </div>
                             </div>
-                            <span className='col-span-1 text-title font-nunito font-bold'>$ {millify(+coin.price, { precision: 3})}</span>
+                            <span className='col-span-1 text-title font-nunito font-bold'>$ {millify(+coin.price, { precision: 5, decimalSeparator: ','})}</span>
                             <span className='col-span-1 text-title font-nunito font-bold'>{millify(+coin.marketCap)}</span>
                             <span className={`
                                 col-span-1 font-nunito font-bold justify-self-end

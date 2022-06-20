@@ -1,20 +1,24 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Layout } from '../components'
-import { dehydrate, Hydrate, QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
+import Head from 'next/head'
+import Router from 'next/router'
+import NProgress from 'nprogress'
+
+Router.events.on("routeChangeStart", () => {
+  NProgress.start()
+})
+
+Router.events.on("routeChangeComplete", () => NProgress.done())
+Router.events.on("routeChangeError", () => NProgress.done())
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient()
   return(
-    <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydratedState}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Hydrate>
-      <ReactQueryDevtools initialIsOpen={true} />
-    </QueryClientProvider>
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 }
 
