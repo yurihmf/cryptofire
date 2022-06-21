@@ -6,4 +6,5 @@ export interface HomeProps{
         coins: Coin[]
         stats: Stats
     }
+    currentPage: number
 }

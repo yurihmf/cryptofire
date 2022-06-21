@@ -8,4 +8,5 @@ export interface CoinDetailsProps{
         coin: CoinDetail
     },
     priceHistory: PriceHistory
+    timePeriod: string
 }

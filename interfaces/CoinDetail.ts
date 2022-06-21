@@ -32,9 +32,7 @@ export interface CoinDetail{
 }
 
 export interface ILink{
-    link: {
-        name: string
-        type: string
-        url: string
-    }
+    name: string
+    type: string
+    url: string
 }

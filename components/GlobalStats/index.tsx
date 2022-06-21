@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Stats } from '../../interfaces/Stats';
 import millify from 'millify';
-import { FaCoins } from 'react-icons/fa'
-import { GiCoins, GiReceiveMoney } from 'react-icons/gi'
-import { BiStore, BiWorld } from 'react-icons/bi'
-import { BsCurrencyExchange, BsCurrencyDollar } from 'react-icons/bs'
+import React, { useState } from 'react';
+import { BiStore, BiWorld } from 'react-icons/bi';
+import { BsCurrencyDollar, BsCurrencyExchange } from 'react-icons/bs';
+import { FaCoins } from 'react-icons/fa';
+import { GiCoins, GiReceiveMoney } from 'react-icons/gi';
+import { Stats } from '../../interfaces/Stats';
 
 
 interface GlobalStatsprops{
@@ -26,7 +26,7 @@ const GlobalStats: React.FC<GlobalStatsprops> = ({ stats }) => {
     return (
         <div className='w-full p-5 flex flex-col items-center justify-center'>
             <h2 className='text-white text-3xl flex gap-2 items-center mb-6 font-nunito'><BiWorld color='#272343'/> Status Global</h2>
-            <div className='flex gap-6 justify-center bg-secondary rounded-full drop-shadow-sm'>
+            <div className='flex gap-6 justify-center bg-highlight rounded-full drop-shadow-sm'>
                 {globalStatsInfos.map((stat) => (
                     <div className='flex gap- items-center gap-1 px-4 py-2 rounded-full' key={stat.title}>
                         {stat.icon}
