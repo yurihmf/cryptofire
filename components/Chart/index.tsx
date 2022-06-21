@@ -21,8 +21,8 @@ const Chart: React.FC<ChartProps> = ({ prices, change, coinId, currentTimePeriod
     
     return (
         <div className='w-full h-96 my-10'>
-            <div className='w-full flex justify-between'>
-                <h2 className='text-title text-2xl mb-10'>Histórico de preços - {currentTimePeriod}</h2>
+            <div className='w-full flex justify-between flex-col md:flex-row items-center'>
+                <h2 className='text-title text-2xl mb-4 md:mb-10'>Histórico de preços - {currentTimePeriod}</h2>
                 <div className='flex border border-color-title rounded-md h-fit items-center'>
                     {timeOptions.map((time, index) => (
                         <Link href={`/coin/${coinId}?timePeriod=${time}`} key={index}>

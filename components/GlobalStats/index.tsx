@@ -26,11 +26,13 @@ const GlobalStats: React.FC<GlobalStatsprops> = ({ stats }) => {
     return (
         <div className='w-full p-5 flex flex-col items-center justify-center'>
             <h2 className='text-white text-3xl flex gap-2 items-center mb-6 font-nunito'><BiWorld color='#272343'/> Status Global</h2>
-            <div className='flex gap-6 justify-center bg-highlight rounded-full drop-shadow-sm'>
+            <div className='flex gap-6 justify-center flex-col md:flex-row md:bg-highlight rounded-md md:rounded-full drop-shadow-sm md:px-2 2xl:px-0'>
                 {globalStatsInfos.map((stat) => (
-                    <div className='flex gap- items-center gap-1 px-4 py-2 rounded-full' key={stat.title}>
-                        {stat.icon}
-                        <p className='text-white text-md font-bold font-nunito'>{stat.title}</p>
+                    <div className='flex justify-between items-center gap-1 px-4 md:px-2 2xl:px-4 py-2 rounded-full border border-title md:border-none' key={stat.title}>
+                        <div className='flex items-center gap-2'>
+                            {stat.icon}
+                            <p className='text-white text-md md:text-sm 2xl:text-md font-bold font-nunito'>{stat.title}</p>
+                        </div>
                         <span className='text-white text-md font-nunito'>{stat.value}</span>
                     </div>
                 ))}

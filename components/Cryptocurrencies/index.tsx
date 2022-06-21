@@ -18,16 +18,16 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ coinsList, currentP
     
     return (
         <div className='w-full flex flex-col items-center py-10'>
-            <h1 className='text-title text-5xl font-nunito mb-10 pb-2 border-b border-color-title'>Lista de preço Criptomoedas</h1>
-            <div className='grid grid-cols-4 grid-rows-1 items-center gap-x-2 mb-4 w-7/12'>
+            <h1 className='text-title text-2xl md:text-3xl 2xl:text-5xl font-nunito mb-10 pb-2 border-b border-color-title'>Lista de preço Criptomoedas</h1>
+            <div className='grid grid-cols-2 md:grid-cols-4 grid-rows-1 items-center text-center md:text-start px-10 gap-x-10 md:px-0 md:gap-x-4 mb-4 w-full md:w-7/12'>
                 <p className='col-span-1 text-title font-nunito font-bold'>Moedas</p>
                 <p className='col-span-1 text-title font-nunito font-bold'>Preço</p>
-                <p className='col-span-1 text-title font-nunito font-bold'>Capitalização de Mercado</p>
-                <p className='col-span-1 text-title font-nunito font-bold justify-self-end'>24H</p>
+                <p className='col-span-1 text-title font-nunito font-bold hidden md:block'>Capitalização de Mercado</p>
+                <p className='col-span-1 text-title font-nunito font-bold justify-self-end hidden md:block'>24H</p>
             </div>
                 {coins?.map((coin) => (
                     <Link href={`/coin/${coin.uuid}`} key={coin.uuid}>
-                        <div className='grid grid-cols-4 grid-rows-1 items-center w-7/12 py-2 drop-shadow-md transition-all delay-75 ease-in-out rounded-lg  cursor-pointer hover:bg-highlight hover:px-4' >
+                        <div className='grid grid-cols-2 md:grid-cols-4 grid-rows-1 px-10 gap-x-10 md:px-0 md:gap-x-4 items-center justify-between w-full md:w-7/12 py-2 drop-shadow-md transition-all delay-75 ease-in-out rounded-none md:rounded-lg  cursor-pointer hover:bg-highlight hover:px-4 border-b border-title md:border-none' >
                             <div className='flex gap-3 col-span-1 items-center text-title font-nunito'>
                                 <span className='font-bold'>{coin.rank}</span>
                                 <div className='w-5 h-5'>
@@ -39,9 +39,9 @@ const Cryptocurrencies: React.FC<CryptocurrenciesProps> = ({ coinsList, currentP
                                 </div>
                             </div>
                             <span className='col-span-1 text-title font-nunito font-bold'>$ {millify(+coin.price, { precision: 5, decimalSeparator: ','})}</span>
-                            <span className='col-span-1 text-title font-nunito font-bold'>$ {millify(+coin.marketCap)}</span>
+                            <span className='col-span-1 text-title font-nunito font-bold hidden md:block'>$ {millify(+coin.marketCap)}</span>
                             <span className={`
-                                col-span-1 font-nunito font-bold justify-self-end
+                                col-span-1 font-nunito font-bold justify-self-end hidden md:block
                                 ${+coin.change > 0 ? 'text-positive' : 'text-negative'}
                             `}>
                                 {coin.change}%

@@ -68,43 +68,45 @@ const CoinDetails: React.FC<CoinDetailsProps> = ({ data, priceHistory, timePerio
   
   return (
     <section className='container mx-auto py-10 font-nunito'>
-      <div className='flex items-center'>
-        <div className='w-10 h-10 mr-2'><Image src={coin.iconUrl} alt={coin.name} width='100%' height='100%'/></div>
-        <h1 className='text-title text-3xl font-bold h-full'>
-          {coin.name}
-        </h1>
-        <span className='text-sm text-text font-light mr-2 h-full'>({coin.symbol})</span>
-        <p className='text-text text-sm border-b border-color-title h-full'>#{coin.rank}</p>
-      <div className='flex gap-3 items-end ml-12 h-full'>
-        <span className='col-span-1 text-title text-xl font-nunito font-bold h-full'>$ {millify(+coin.price, { precision: 3})}</span>
-        <span className={`
-              col-span-1 font-nunito font-bold justify-self-end
-              ${+coin.change > 0 ? 'text-positive' : 'text-negative'}
-          `}>
-              {coin.change}%
-          </span>
+      <div className='flex flex-col items-center md:flex-row gap-4 md:gap-0'>
+        <div className='flex items-center'>
+          <div className='w-10 h-10 mr-2'><Image src={coin.iconUrl} alt={coin.name} width='100%' height='100%'/></div>
+          <h1 className='text-title text-3xl font-bold h-full'>
+            {coin.name}
+          </h1>
+          <span className='text-sm text-text font-light mr-2 h-full'>({coin.symbol})</span>
+          <p className='text-text text-sm border-b border-color-title h-full w-fit'>#{coin.rank}</p>
+        </div>
+        <div className='flex gap-3 items-center md:items-end ml-12 h-full'>
+          <span className='col-span-1 text-title text-xl font-nunito font-bold h-full'>$ {millify(+coin.price, { precision: 3})}</span>
+          <span className={`
+                col-span-1 font-nunito font-bold justify-self-end
+                ${+coin.change > 0 ? 'text-positive' : 'text-negative'}
+            `}>
+                {coin.change}%
+            </span>
         </div>
       </div>
 
       <Chart prices={prices.history} change={prices.change} coinId={data?.coin?.uuid} currentTimePeriod={timePeriod}/>
 
-      <div className='w-full flex gap-x-32 gap-y-16 mt-32 justify-between flex-wrap'>
-        <div className='w-5/12 flex flex-col p-4'>
-            <h2 className='text-title text-2xl border-b border-color-title w-fit mb-6'>Informações da moeda</h2>
+      <div className='w-full flex gap-x-10 2xl:gap-x-32 gap-y-16 mt-32 justify-around 2xl:justify-between flex-wrap'>
+        <div className='w-full md:w-5/12 flex flex-col p-4'>
+            <h2 className='text-title text-2xl border-b border-color-title w-fit mb-6 mx-auto md:mx-0'>Informações da moeda</h2>
             <div className='flex w-full flex-col'>
               {coinStatistics?.map((item) => (
                 <div className='w-full flex justify-between py-4' key={item.title}>
                   <div className='flex gap-2 items-center'>
-                    <span className='w-7 h-7'>{item?.icon}</span>
-                    <p className='text-lg font-bold text-title'>{item?.title}</p>
+                    <span className='w-5 h-5 md:w-7 md:h-7'>{item?.icon}</span>
+                    <p className='text-md md:text-lg font-bold text-title'>{item?.title}</p>
                   </div>
                   <p>{item?.value}</p>
                 </div>
               ))}
             </div>
         </div>
-        <div className='w-5/12 flex flex-col p-4'>
-            <h2 className='text-title text-2xl border-b border-color-title w-fit'>Links</h2>
+        <div className='w-full md:w-5/12 flex flex-col p-4'>
+            <h2 className='text-title text-2xl border-b border-color-title w-fit mx-auto md:mx-0'>Links</h2>
             <div className='flex w-full flex-col'>
               {coin?.links.map((link) => (
                 <div className='w-full flex justify-between py-3' key={link?.url}>
