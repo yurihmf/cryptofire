@@ -3,6 +3,8 @@ Este projeto foi realizado para por em prática alguns estudos que fiz sobre alg
 
 Eu utilizei a própria [API do Coinraking](https://developers.coinranking.com/api) para consumir os dados, e com o Rapid API me inscrevi para gerar as chaves de acesso da API, também me baseei no layout do Coinraking para a criação do meu.
 
+Veja o projeto em produção hospedado na Vercel [CryptoFire](https://cryptofire.vercel.app/)!
+
 ## 🛠️ Ferramentas utilizadas
 	 - React
 	 - NextJS
