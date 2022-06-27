@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## ❤️‍🔥CryptoFire
+Este projeto foi realizado para por em prática alguns estudos que fiz sobre algumas tecnologias que foram utilizadas. Consiste em uma listagem de Criptomoedas que são rankeadas pelo [CoinRaking](https://coinranking.com/), e também um breve detalhamento de cada moeda. 
 
-## Getting Started
+Eu utilizei a própria [API do Coinraking](https://developers.coinranking.com/api) para consumir os dados, e com o Rapid API me inscrevi para gerar as chaves de acesso da API, também me baseei no layout do Coinraking para a criação do meu.
 
-First, run the development server:
+## 🛠️ Ferramentas utilizadas
+	 - React
+	 - NextJS
+	 - TypeScript
+	 - TailwindCSS
+	 - Axios
+	 - Recharts
+	 - Millify
+	 - Moment
+	 - React Icons
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 📂 Como rodar o projeto
+	1. Clone ou baixe o projeto
+	2. Utilizando o terminal entre na pasta do projeto
+	3. Certifique-se que tenha instalado o NodeJS na versão 16.~ e também o Yarn 
+	4. Rode o comando **yarn install**
+	5. Crie um arquivo chamado **.env.local** na raiz do projeto e nele adicione a variável **NEXT_PUBLIC_API_KEY** com sua chave de api do Coinranking, de preferência pelo site [Rapid API](https://rapidapi.com/Coinranking/api/coinranking1/)
+	6. Agora só rodar o comando **yarn dev**
+	7. E pronto, bom hacking! 😁
+  
+  ## 📸 Screenshots
+  ![Home Page 1](https://user-images.githubusercontent.com/73313149/175962823-2b9b64cc-067c-4011-ac95-be8a42032aaa.png)
+  ![Home Page 2](https://user-images.githubusercontent.com/73313149/175962909-e9f7ee2a-9cbb-4195-9a54-d59efa21d106.png)
+  ![Coin Detail 1](https://user-images.githubusercontent.com/73313149/175962934-696069ec-4a97-4ae5-9507-37cfc6937e4b.png)
+  ![Coin Detail 2](https://user-images.githubusercontent.com/73313149/175962955-4e5fa2df-1cf2-4857-a1ff-d5b4a151b5ca.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
